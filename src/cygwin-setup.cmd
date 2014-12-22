@@ -1,0 +1,34 @@
+:: --quiet-mode --no-startmenu --no-desktop --no-shortcuts 
+:: initialise configuration
+set pkgdir=c:\original\cygwin
+set rootdir=c:\opt\cygwin
+set srcsite=http://cygwin.uib.no/ 
+set setup=setup-x86_64.exe
+
+:: define list of packages to install, update
+set pkgs=binutils
+set pkgs=%pkgs%,bzip2
+set pkgs=%pkgs%,colorgcc
+set pkgs=%pkgs%,curl
+set pkgs=%pkgs%,cygutils
+set pkgs=%pkgs%,expat
+set pkgs=%pkgs%,expat-debuginfo
+set pkgs=%pkgs%,gcc-core
+set pkgs=%pkgs%,gcc-g++
+set pkgs=%pkgs%,git
+set pkgs=%pkgs%,git-completion
+set pkgs=%pkgs%,rxvt-unicode
+set pkgs=%pkgs%,gzip
+set pkgs=%pkgs%,unzip
+set pkgs=%pkgs%,zip
+set pkgs=%pkgs%,m4
+set pkgs=%pkgs%,make
+set pkgs=%pkgs%,vim
+set pkgs=%pkgs%,mintty
+set pkgs=%pkgs%,libxml
+set pkgs=%pkgs%,libxml2-devel
+set pkgs=%pkgs%,libexpat-devel
+set pkgs=%pkgs%,libcrypt-devel
+
+:: do the job
+%setup%  --quiet-mode --wait --no-desktop --local-package-dir %pkgdir% --site %srcsite% --root %rootdir% --upgrade-also --packages %pkgs%
