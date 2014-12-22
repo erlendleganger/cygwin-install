@@ -1,4 +1,4 @@
 cygwin-install
 ==============
 
-Store for the files I used to configure a Cygwin installation
+A central store for the files I use to configure a Cygwin installation
