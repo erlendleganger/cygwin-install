@@ -3,6 +3,7 @@
 set pkgdir=c:\original\cygwin
 set rootdir=c:\opt\cygwin
 set srcsite=http://cygwin.uib.no/ 
+set setup=setup-x86.exe
 set setup=setup-x86_64.exe
 
 :: define list of packages to install, update
