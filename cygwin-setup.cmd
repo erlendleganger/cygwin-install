@@ -41,4 +41,12 @@ set pkgs=%pkgs%,libcrypt-devel
 echo %me%: start installer, do the job:
 %setup%  --quiet-mode --wait --no-desktop --local-package-dir %pkgdir% --site %srcsite% --root %rootdir% --upgrade-also --packages %pkgs%
 
+echo[
+set script=perl-setup.sh
+copy %script% %rootdir%\tmp >nul
+echo %me%: configure perl:
+echo %me%: run 'bash /tmp/%script%' in the new window:
+::%rootdir%\bin\mintty.exe -e /usr/bin/bash /tmp/%script%
+%rootdir%\bin\mintty.exe -
+
 echo %me%: done
