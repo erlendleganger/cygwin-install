@@ -1,12 +1,19 @@
+@echo off
+::file name, no extension
+::set me=%~n0 
+::file name, and extension:
+set me=%~n0%~x0 
+
+echo %me%: start
 :: --quiet-mode --no-startmenu --no-desktop --no-shortcuts 
-:: initialise configuration
+echo %me%: initialise configuration:
 set pkgdir=c:\original\cygwin
 set rootdir=c:\opt\cygwin
 set srcsite=http://cygwin.uib.no/ 
 set setup=setup-x86.exe
 set setup=setup-x86_64.exe
 
-:: define list of packages to install, update
+echo %me%: define list of packages to install, update:
 set pkgs=binutils
 set pkgs=%pkgs%,bzip2
 set pkgs=%pkgs%,colorgcc
@@ -31,5 +38,7 @@ set pkgs=%pkgs%,libxml2-devel
 set pkgs=%pkgs%,libexpat-devel
 set pkgs=%pkgs%,libcrypt-devel
 
-:: do the job
+echo %me%: start installer, do the job:
 %setup%  --quiet-mode --wait --no-desktop --local-package-dir %pkgdir% --site %srcsite% --root %rootdir% --upgrade-also --packages %pkgs%
+
+echo %me%: done
