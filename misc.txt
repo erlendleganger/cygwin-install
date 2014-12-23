@@ -5,6 +5,8 @@
 ::D:\opt\cygwin\bin\rxvt.exe -display :0 -fn "Lucida Console-14" -tn rxvt-cygwin-native -e /bin/bash --login
 ::c:\opt\cygwin\bin\urxvt.exe -display :0 -fn "Lucida Console-14" -tn rxvt-cygwin-native -e /bin/bash --login
 
-::for c in gcc g++; do ln -s /usr/bin/$c /usr/bin/$c-4; done
-::curl -L http://cpanmin.us|perl - App::cpanminus;
-::for m in Error Log::Log4perl XML::Parser; do cpanm -fv $m; done
+
+git config --global credential.helper wincred
+git config --global push.default simple
+
+
