@@ -4,8 +4,8 @@ echo $me: start
 #ensure the gcc programs exist in a *-4 version as well
 printf "\n$me: set gcc names\n"
 for s in gcc g++; do 
-   src="/usr/bin/$s"
-   tgt="/usr/bin/$s-4"
+   src="/usr/bin/$s.exe"
+   tgt="/usr/bin/$s-4.exe"
    [ ! -f $tgt ] && ln -s $src $tgt
 done
 
