@@ -44,12 +44,23 @@ set pkgs=%pkgs%,libcrypt-devel
 echo %me%: start installer, do the job:
 %setup%  --quiet-mode --wait --no-desktop --local-package-dir %pkgdir% --site %srcsite% --root %rootdir% --upgrade-also --packages %pkgs%
 
+::do the perl stuff
 echo[
 set script=perl-setup.sh
 copy %script% %rootdir%\tmp >nul
-echo %me%: configure perl:
-echo %me%: run 'bash /tmp/%script%' in the new window:
-::%rootdir%\bin\mintty.exe -e /usr/bin/bash /tmp/%script%
-%rootdir%\bin\mintty.exe -
+echo %me%: configure perl: start
+echo %me%: - observe that a terminal window now is shown
+echo %me%: - run 'time bash /tmp/%script%' in the terminal window
+echo %me%: - wait until the job completes, this can take 5-20min
+echo %me%: - when done, close the terminal window with 'exit'
 
-echo %me%: done
+::start a terminal for the commands above
+::mintty - alternative terminal emulator
+::%rootdir%\bin\mintty.exe -
+%rootdir%\bin\run.exe -wait /usr/bin/rxvt.exe -display 127.0.0.1:0 -tn rxvt-cygwin -e /bin/bash --login
+echo %me%: configure perl: done
+
+::ok, all done now
+echo[
+echo %me%: cygwin installation completed
+
