@@ -1,7 +1,7 @@
 @echo off
-::file name, no extension
+::get my file name, no extension
 ::set me=%~n0 
-::file name, and extension:
+::get my file name, including extension:
 set me=%~n0%~x0 
 
 echo %me%: start
