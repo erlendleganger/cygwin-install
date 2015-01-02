@@ -10,8 +10,10 @@ echo %me%: initialise configuration:
 set pkgdir=c:\original\cygwin
 set rootdir=c:\opt\cygwin
 set srcsite=http://cygwin.uib.no/ 
+
+:: use 32bit version, 64bit not yet mature (Jan 2015)
+::set setup=setup-x86_64.exe
 set setup=setup-x86.exe
-set setup=setup-x86_64.exe
 
 echo %me%: define list of packages to install, update:
 set pkgs=binutils
