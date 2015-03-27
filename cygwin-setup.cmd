@@ -42,23 +42,34 @@ set pkgs=%pkgs%,libexpat-devel
 set pkgs=%pkgs%,libcrypt-devel
 
 echo %me%: start installer, do the job:
-%setup%  --quiet-mode --wait --no-desktop --local-package-dir %pkgdir% --site %srcsite% --root %rootdir% --upgrade-also --packages %pkgs%
+echo %setup%  --quiet-mode --wait --no-desktop --local-package-dir %pkgdir% --site %srcsite% --root %rootdir% --upgrade-also --packages %pkgs%
 
 ::do the perl stuff
+set line=---------------------------------------------------------------------
 echo[
+echo %line%
 set script=perl-setup.sh
 copy %script% %rootdir%\tmp >nul
-echo %me%: configure perl: start
 echo %me%: - observe that a terminal window now is shown
-echo %me%: - run 'time bash /tmp/%script%' in the terminal window
-echo %me%: - wait until the job completes, this can take 5-20min
+echo %line%
+echo %me%: configure perl: start
+echo %me%: - run 'time bash /tmp/%script%'
+echo %me%: - wait, the job can take a few minutes
+echo %me%: configure perl: end
+echo %line%
+set script=puttycyg-setup.sh
+copy %script% %rootdir%\tmp >nul
+echo %me%: configure Putty: start
+echo %me%: - run 'time bash /tmp/%script%'
+echo %me%: - wait, the job takes a few seconds
+echo %me%: configure Putty: end
+echo %line%
 echo %me%: - when done, close the terminal window with 'exit'
 
 ::start a terminal for the commands above
 ::mintty - alternative terminal emulator
 ::%rootdir%\bin\mintty.exe -
 %rootdir%\bin\run.exe -wait /usr/bin/rxvt.exe -display 127.0.0.1:0 -tn rxvt-cygwin -e /bin/bash --login
-echo %me%: configure perl: done
 
 ::ok, all done now
 echo[
