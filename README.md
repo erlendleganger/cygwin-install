@@ -21,7 +21,7 @@ Git stuff
 =========
 Recommended settings:
 * git config core.pager cat
-* git config core.autocrlf true
+* git config core.autocrlf input
 * git config push.default simple
 * git config --global user.email your.name@domain.com
 * git config --global user.name "Your Name"
