@@ -3,6 +3,8 @@
 ::set me=%~n0 
 ::get my file name, including extension:
 set me=%~n0%~x0 
+::get directory of this file, including trailing \
+set bindir=%~dp0
 
 echo %me%: start
 :: --quiet-mode --no-startmenu --no-desktop --no-shortcuts 
@@ -13,7 +15,7 @@ set srcsite=http://cygwin.uib.no/
 
 :: use 32bit version, 64bit not yet mature (Jan 2015)
 ::set setup=setup-x86_64.exe
-set setup=setup-x86.exe
+set setup=%bindir%setup-x86.exe
 
 echo %me%: define list of packages to install, update:
 set pkgs=binutils
@@ -42,14 +44,14 @@ set pkgs=%pkgs%,libexpat-devel
 set pkgs=%pkgs%,libcrypt-devel
 
 echo %me%: start installer, do the job:
-echo %setup%  --quiet-mode --wait --no-desktop --local-package-dir %pkgdir% --site %srcsite% --root %rootdir% --upgrade-also --packages %pkgs%
+%setup%  --quiet-mode --wait --no-desktop --local-package-dir %pkgdir% --site %srcsite% --root %rootdir% --upgrade-also --packages %pkgs%
 
 ::do the perl stuff
 set line=---------------------------------------------------------------------
 echo[
 echo %line%
 set script=perl-setup.sh
-copy %script% %rootdir%\tmp >nul
+copy %bindir%%script% %rootdir%\tmp >nul
 echo %me%: - observe that a terminal window now is shown
 echo %line%
 echo %me%: configure perl: start
@@ -58,10 +60,11 @@ echo %me%: - wait, the job can take a few minutes
 echo %me%: configure perl: end
 echo %line%
 set script=puttycyg-setup.sh
-copy %script% %rootdir%\tmp >nul
+copy %bindir%%script% %rootdir%\tmp >nul
 echo %me%: configure Putty: start
 echo %me%: - run 'time bash /tmp/%script%'
 echo %me%: - wait, the job takes a few seconds
+echo %me%: - suggested shortcut target: "C:\opt\putty\putty.exe -load cygwin"
 echo %me%: configure Putty: end
 echo %line%
 echo %me%: - when done, close the terminal window with 'exit'
