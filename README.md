@@ -7,21 +7,21 @@ Usage
 =====
 
 1. Clone this repo into for example c:\original\cygwin-install.
-2. Verify the pkgdir, rootdir settings in cygwin-setup.cmd; 
+1. Verify the pkgdir, rootdir settings in cygwin-setup.cmd; 
    modify as required.   
-3. Verify the tgtdir,pkgdir settings in puttycyg-setup.sh;
+1. Verify the tgtdir,pkgdir settings in puttycyg-setup.sh;
    modify as required.   
-4. Start a CMD window as Administrator.
-5. In the CMD window, run the cygwin-setup.cmd file.
-6. Read the instructions from cygwin-setup.cmd to install perl, putty.
-7. Putty setup:
-  a. Start the installed c:\opt\putty\putty.exe
-  b. Create a session called cygwin, use host name "-" (a dash) and Connection
+1. Start a CMD window as Administrator.
+1. In the CMD window, run the cygwin-setup.cmd file.
+1. Read the instructions from cygwin-setup.cmd to install perl, putty.
+1. Putty setup:
+    1. Start the installed c:\opt\putty\putty.exe
+    1. Create a session called cygwin, use host name "-" (a dash) and Connection
      type: Cygterm.
-  c. Create a shortcut to load this: "c:\opt\putty\putty.exe -load cygwin"
-  d. Load proper colours using the reg key file putty-cygwin-session.reg
-  e. Use the shortcut and verify that Cygwin starts with proper colours
-8. Start using Cygwin.
+    1. Create a shortcut to load this: "c:\opt\putty\putty.exe -load cygwin"
+    1. Load proper colours using the reg key file putty-cygwin-session.reg
+    1. Use the shortcut and verify that Cygwin starts with proper colours
+1. Start using Cygwin.
 
 Git stuff
 =========
