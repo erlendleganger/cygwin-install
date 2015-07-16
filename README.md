@@ -38,5 +38,5 @@ Recommended settings:
 Git token authentication
 ========================
 This is also taken care of by the git-config.sh script.
-* For msysgit: git config --global credential.helper wincred. At the next push, the username and password (=the app token) will be saved.
-* Form cygwin git: git config --global credential.helper winstore. This uses the file git-credential-winstore.exe (from https://gitcredentialstore.codeplex.com/releases/view/106064) as a helper for the credentials. At the next push, the Github username and password (= app token) will be saved by Windows.
+* For msysgit: git config --global credential.helper wincred. At the next push, the username and password (=the Github app token) will be saved.
+* Form cygwin git: git config --global credential.helper winstore. This uses the file git-credential-winstore.exe (from https://gitcredentialstore.codeplex.com/releases/view/106064) as a helper for the credentials. At the next push, the Github username and password (= Github app token) will be saved by Windows.
