@@ -19,6 +19,7 @@ set setup=%bindir%setup-x86.exe
 ::------------------------------------------------------------------------
 ::define list of packages to install, update:
 set pkgs=binutils
+set pkgs=%pkgs%,dos2unix
 set pkgs=%pkgs%,bzip2
 set pkgs=%pkgs%,colorgcc
 set pkgs=%pkgs%,curl
