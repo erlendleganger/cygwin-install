@@ -38,6 +38,7 @@ set pkgs=%pkgs%,zip
 set pkgs=%pkgs%,m4
 set pkgs=%pkgs%,make
 set pkgs=%pkgs%,vim
+set pkgs=%pkgs%,nano
 set pkgs=%pkgs%,mintty
 set pkgs=%pkgs%,libxml
 set pkgs=%pkgs%,libxml2-devel
