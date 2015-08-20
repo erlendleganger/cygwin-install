@@ -85,7 +85,6 @@ echo %me%: configure Putty: end
 echo %line%
 echo %me%: - when done, close the terminal window with 'exit'
 
-goto :eof
 ::------------------------------------------------------------------------
 ::start a terminal for the commands above
 ::mintty - alternative terminal emulator
@@ -95,7 +94,8 @@ goto :eof
 ::------------------------------------------------------------------------
 echo zip up all files:
 cd %rootdir%\..
-%zip% a %zipball% %id%
+echo %zip% a %zipball% %id%
+copy %srcdir%\cygwin-readme.txt %xferdir%\cygwin-%dtg%-readme.txt
 
 ::------------------------------------------------------------------------
 ::ok, all done now
