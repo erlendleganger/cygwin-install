@@ -14,7 +14,7 @@ printf "\n$me: get cpanm:\n"
 curl -L http://cpanmin.us|perl - App::cpanminus;
 
 #install required perl modules
-for m in Error Log::Log4perl XML::Parser; do 
+for m in Error Log::Log4perl XML::Parser XML::Simple; do 
    printf "\n$me: install perl module $m:\n"
    cpanm -fv $m
 done
