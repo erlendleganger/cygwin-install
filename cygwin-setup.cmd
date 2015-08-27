@@ -108,7 +108,7 @@ echo %me%: - when done, close the terminal window with 'exit'
 ::------------------------------------------------------------------------
 echo zip up all files:
 cd %rootdir%\..
-echo %zip% a %zipball% %id%
+%zip% a %zipball% %id%
 copy %srcdir%\cygwin-readme.txt %xferdir%\cygwin-%dtg%-readme.txt
 
 ::------------------------------------------------------------------------
