@@ -13,7 +13,7 @@ if [ "$(uname -s|grep -i cygwin)" ]; then
    ./git-credential-winstore.exe -s
    sleep 2 #wait until the installer does its job
    #fix the path in global gitconfig
-   perl -pi.bak -e "if(m/helper/){s,C:,/cygdrive/c,;s,\\\\,/,g;}" ~/.gitconfig
+   perl -pi.bak -e "if(m/helper/){s,C:,/c,;s,\\\\,/,g;}" ~/.gitconfig
 else
    #for msysgit; a bit simpler...
    echo configure credential helper
