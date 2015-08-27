@@ -125,7 +125,7 @@ copy %srcdir%\putty-cygwin-session.reg %resdir% >nul
 ::------------------------------------------------------------------------
 echo zip up all files:
 cd %rootdir%\..
-%zip% a %zipball% %id%
+%zip% a -x!%id%\home %zipball% %id%
 copy %srcdir%\cygwin-readme.txt %xferdir%\cygwin-%dtg%-readme.txt
 
 ::------------------------------------------------------------------------
