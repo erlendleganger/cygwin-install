@@ -68,7 +68,8 @@ echo %me%: start installer, do the job:
 ::copy misc files in place
 mkdir %resdir%
 copy %srcdir%\vimrc.txt %resdir% >nul
-copy %srcdir%\fstab %rootdir%\etc >nul
+copy %srcdir%\xdefaults.txt %resdir% >nul
+copy %srcdir%\fstab.txt %rootdir%\etc\fstab >nul
 
 ::------------------------------------------------------------------------
 ::do the cygwin stuff
