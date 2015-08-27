@@ -58,17 +58,31 @@ echo %me%: start installer, do the job:
 %setup%  --quiet-mode --wait --no-desktop --local-package-dir %pkgdir% --site %srcsite% --root %rootdir% --upgrade-also --packages %pkgs%
 
 ::------------------------------------------------------------------------
-::do the perl stuff
+::do the cygwin stuff
 echo[
 echo %line%
-set script=perl-setup.sh
+set script=cygwin-config.sh
 copy %srcdir%\%script% %rootdir%\tmp >nul
 echo %me%: - observe that a terminal window now is shown
 echo %line%
-echo %me%: configure perl: start
+echo %me%: do this to configure Cygwin:
+echo %me%: - run 'time bash /tmp/%script%'
+echo %me%: - wait, the job takes a few seconds
+echo %me%: - done
+echo %line%
+
+::------------------------------------------------------------------------
+::do the perl stuff
+echo[
+echo %line%
+set script=perl-config.sh
+copy %srcdir%\%script% %rootdir%\tmp >nul
+echo %me%: - observe that a terminal window now is shown
+echo %line%
+echo %me%: do this to configure Perl:
 echo %me%: - run 'time bash /tmp/%script%'
 echo %me%: - wait, the job can take a few minutes
-echo %me%: configure perl: end
+echo %me%: - done
 echo %line%
 
 ::------------------------------------------------------------------------
@@ -77,7 +91,7 @@ set exe=git-credential-winstore.exe
 copy %srcdir%\%exe% %rootdir%\usr\bin >nul
 set script=puttycyg-setup.sh
 copy %srcdir%\%script% %rootdir%\tmp >nul
-echo %me%: configure Putty: start
+echo %me%: do this to configure Putty:
 echo %me%: - run 'time bash /tmp/%script%'
 echo %me%: - wait, the job takes a few seconds
 echo %me%: - suggested shortcut target: C:\opt\putty\putty.exe -load cygwin
