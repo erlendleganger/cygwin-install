@@ -45,6 +45,15 @@ else
 fi
 
 #------------------------------------------------------------------------
+printf -- "$l\nconfigure bash:\n"
+dest=~/.bashrc
+cp_file bashrc.txt $dest
+dos2unix $dest
+dest=~/.git-prompt.sh
+cp_file git-prompt.sh $dest
+dos2unix $dest
+
+#------------------------------------------------------------------------
 printf -- "$l\nconfigure vim:\n"
 dest=~/.vimrc
 cp_file vimrc.txt $dest
