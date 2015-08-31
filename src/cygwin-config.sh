@@ -4,6 +4,20 @@ cygwin="$(uname -s|grep -i cygwin)"
 cd $(dirname $0)
 
 #------------------------------------------------------------------------
+#copy file from src to dest
+#------------------------------------------------------------------------
+cp_file(){
+local src=$1
+local dest=$2
+if [ -f $src ]; then
+   echo copy $src to $dest
+   cp -p $src $dest
+else
+   echo error: cannot find $src
+fi
+}
+
+#------------------------------------------------------------------------
 printf -- "$l\nconfigure generic git settings:\n"
 git config --global core.pager cat
 git config --global core.autocrlf input
@@ -29,4 +43,27 @@ else
    echo configure credential helper
    git config --global credential.helper wincred
 fi
+
+#------------------------------------------------------------------------
+printf -- "$l\nconfigure vim:\n"
+dest=~/.vimrc
+cp_file vimrc.txt $dest
+dos2unix $dest
+
+#------------------------------------------------------------------------
+printf -- "$l\nconfigure rxvt:\n"
+dest=~/.Xdefaults
+cp_file xdefaults.txt $dest
+dos2unix $dest
+
+##------------------------------------------------------------------------
+#printf -- "$l\nconfigure sshd:\n"
+#ssh-host-config
+
+##------------------------------------------------------------------------
+#printf -- "$l\nconfigure ssh:\n"
+#ssh-user-config
+
+#------------------------------------------------------------------------
+printf -- "$l\n";
 echo done
