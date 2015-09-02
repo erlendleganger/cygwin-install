@@ -41,6 +41,8 @@ set pkgs=%pkgs%,curl
 set pkgs=%pkgs%,cygutils
 set pkgs=%pkgs%,expat
 set pkgs=%pkgs%,expat-debuginfo
+set pkgs=%pkgs%,wget
+set pkgs=%pkgs%,curl
 set pkgs=%pkgs%,gcc-core
 set pkgs=%pkgs%,gcc-g++
 set pkgs=%pkgs%,git
@@ -69,6 +71,10 @@ echo %me%: start installer, do the job:
 mkdir %resdir%
 copy %srcdir%\vimrc.txt %resdir% >nul
 copy %srcdir%\xdefaults.txt %resdir% >nul
+copy %srcdir%\git-prompt.sh %resdir% >nul
+copy %srcdir%\xresources.solarized.dark.txt %resdir% >nul
+copy %srcdir%\xresources.solarized.light.txt %resdir% >nul
+copy %srcdir%\bashrc.txt %resdir% >nul
 copy %srcdir%\fstab.txt %rootdir%\etc\fstab >nul
 
 ::------------------------------------------------------------------------

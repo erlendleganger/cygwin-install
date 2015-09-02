@@ -63,11 +63,11 @@ dos2unix $dest
 #convert Xresources file to Xdefaults, expand defines to explicit settings
 printf -- "$l\nconfigure rxvt:\n"
 for id in dark light; do
-   src=xresources.$id.txt
-   $(grep define $src|awk 'BEGIN {printf "sed"} {printf " -e s/"$2"/\\"$3"/";}') $src |grep -v define >~/.Xdefaults.$id
+   src=Xresources.solarized.$id.txt
+   $(grep define $src|awk 'BEGIN {printf "sed"} {printf " -e s/"$2"/\\"$3"/";}') $src |grep -v define >~/.Xdefaults.solarized.$id
 done
 dest=~/.Xdefaults
-cp_file ~/.Xdefaults.dark $dest
+cp_file ~/.Xdefaults.solarized.dark $dest
 
 ##------------------------------------------------------------------------
 #printf -- "$l\nconfigure sshd:\n"
