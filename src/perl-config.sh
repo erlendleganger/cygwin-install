@@ -1,7 +1,34 @@
+#------------------------------------------------------------------------
 line=------------------------------------------------------------------------
 me=$(basename $0)
 echo $me: start
 
+#------------------------------------------------------------------------
+#modules to install
+modules="
+POSIX
+Error 
+Log::Log4perl
+Cwd
+File::Basename
+File::Basename
+Date::Simple
+DateTime
+Time::Piece
+Time::Seconds
+Text::Template
+Time::Local
+HTML::Entities
+XML::Simple
+XML::Parser
+XML::Parser::Expat
+SVG::TT::Graph
+SVG::TT::Graph::BarHorizontal
+"
+#MediaWiki::Bot
+#LWP::Protocol::https
+
+#------------------------------------------------------------------------
 #ensure the gcc programs exist in a *-4 version as well
 printf "\n$me: set gcc names\n"
 for s in gcc g++; do 
