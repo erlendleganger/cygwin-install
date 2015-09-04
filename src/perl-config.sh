@@ -37,22 +37,31 @@ for s in gcc g++; do
    [ ! -f $tgt ] && ln -s $src $tgt
 done
 
+#------------------------------------------------------------------------
 printf "\n$me: get cpanm:\n"
 #get cpanm, for module maintenance
 curl -L http://cpanmin.us|perl - App::cpanminus;
 
+#------------------------------------------------------------------------
 #install required perl modules
-for m in Error Log::Log4perl XML::Parser XML::Simple; do 
+for m in $modules; do
    printf "\n$line\n$me: install perl module $m:\n"
    cpanm -fv $m
-   perldoc -l $m >/dev/null 2>&1
    if [ $? != 0 ]; then
       echo error: installation of module $m failed
       exit 1
    else
       echo info: installation of module $m ok
    fi
+   perldoc -l $m >/dev/null 2>&1
+   if [ $? != 0 ]; then
+      echo error: documentation for module $m not ok
+      exit 1
+   else
+      echo info: documentation for module $m ok
+   fi
 done
 
+#------------------------------------------------------------------------
 #done
 echo $me: done
