@@ -24,9 +24,11 @@ XML::Parser
 XML::Parser::Expat
 SVG::TT::Graph
 SVG::TT::Graph::BarHorizontal
+LWP::Protocol::https
+MediaWiki::API
+MediaWiki::Bot
+MediaWiki::DumpFile
 "
-#MediaWiki::Bot
-#LWP::Protocol::https
 
 #------------------------------------------------------------------------
 #ensure the gcc programs exist in a *-4 version as well
