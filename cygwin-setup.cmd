@@ -61,6 +61,9 @@ set pkgs=%pkgs%,libxml
 set pkgs=%pkgs%,libxml2-devel
 set pkgs=%pkgs%,libexpat-devel
 set pkgs=%pkgs%,libcrypt-devel
+set pkgs=%pkgs%,openssl
+set pkgs=%pkgs%,openssl-devel
+set pkgs=%pkgs%,openssl-perl
 
 ::------------------------------------------------------------------------
 echo %me%: start installer, do the job:
