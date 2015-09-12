@@ -198,3 +198,4 @@
 # alias cd=cd_func
 source ~/.git-prompt.sh
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+PROMPT_COMMAND='history -a;history -r' #flush, then read history back
