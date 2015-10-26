@@ -66,6 +66,10 @@ set pkgs=%pkgs%,openssl-devel
 set pkgs=%pkgs%,openssl-perl
 
 ::------------------------------------------------------------------------
+:: stop ssh daemon, if present
+net stop sshd >nul
+
+::------------------------------------------------------------------------
 echo %me%: start installer, do the job:
 %setup%  --quiet-mode --wait --no-desktop --local-package-dir %pkgdir% --site %srcsite% --root %rootdir% --upgrade-also --packages %pkgs%
 
