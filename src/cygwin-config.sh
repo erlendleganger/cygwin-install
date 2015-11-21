@@ -69,6 +69,12 @@ done
 dest=~/.Xdefaults
 cp_file ~/.Xdefaults.solarized.dark $dest
 
+#------------------------------------------------------------------------
+#unpack maven
+printf -- "$l\nunpack maven:\n"
+src=$(pwd)/apache-maven-3.3.9-bin.tar.gz
+(cd /opt; tar xfz $src)
+
 ##------------------------------------------------------------------------
 #printf -- "$l\nconfigure sshd:\n"
 #ssh-host-config
