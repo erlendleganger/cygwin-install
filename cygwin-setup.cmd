@@ -82,6 +82,8 @@ copy %srcdir%\git-prompt.sh %resdir% >nul
 copy %srcdir%\xresources.solarized.dark.txt %resdir% >nul
 copy %srcdir%\xresources.solarized.light.txt %resdir% >nul
 copy %srcdir%\bashrc.txt %resdir% >nul
+copy %srcdir%\apache-maven-3.3.9-bin.tar.gz %resdir% >nul
+copy %srcdir%\gitd-install-svc.cmd %resdir% >nul
 copy %srcdir%\fstab.txt %rootdir%\etc\fstab >nul
 
 ::------------------------------------------------------------------------
