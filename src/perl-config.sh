@@ -19,6 +19,7 @@ Time::Seconds
 Text::Template
 Time::Local
 HTML::Entities
+HTTPS::Server::Simple
 XML::Simple
 XML::Parser
 XML::Parser::Expat
