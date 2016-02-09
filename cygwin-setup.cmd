@@ -8,6 +8,7 @@ set srcsite=http://cygwin.uib.no/
 set pkgdir=c:\original\%id%
 ::rootdir - cygwin target directory, this is where cygwin will run from 
 set rootdir=c:\opt\%id%
+set rootdirdrive=c:
 
 ::------------------------------------------------------------------------
 echo %me%: initialise configuration:
@@ -139,6 +140,7 @@ copy %srcdir%\putty-cygwin-session.reg %resdir% >nul
 
 ::------------------------------------------------------------------------
 echo zip up all files:
+%rootdirdrive%
 cd %rootdir%\..
 %zip% a -x!%id%\home -x!%id%\etc\ssh_host*key %zipball% %id%
 copy %srcdir%\cygwin-readme.txt %xferdir%\cygwin-%dtg%-readme.txt
