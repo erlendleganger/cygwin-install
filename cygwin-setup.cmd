@@ -7,8 +7,8 @@ set srcsite=http://cygwin.uib.no/
 ::pkgdir - location for all cygwin packages
 set pkgdir=c:\original\%id%
 ::rootdir - cygwin target directory, this is where cygwin will run from 
-set rootdir=c:\opt\%id%
 set rootdirdrive=c:
+set rootdir=%rootdirdrive%\opt\%id%
 
 ::------------------------------------------------------------------------
 echo %me%: initialise configuration:
