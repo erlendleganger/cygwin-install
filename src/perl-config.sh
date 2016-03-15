@@ -19,11 +19,10 @@ Time::Seconds
 Text::Template
 Time::Local
 HTML::Entities
-HTTP::Server::Simple
+HTTPS::Server::Simple
 XML::Simple
 XML::Parser
 XML::Parser::Expat
-XML::Twig
 SVG::TT::Graph
 SVG::TT::Graph::BarHorizontal
 LWP::Protocol::https
