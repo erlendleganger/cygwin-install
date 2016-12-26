@@ -68,6 +68,7 @@ set pkgs=%pkgs%,libcrypt-devel
 set pkgs=%pkgs%,openssl
 set pkgs=%pkgs%,openssl-devel
 set pkgs=%pkgs%,openssl-perl
+set pkgs=%pkgs%,sqllite
 
 ::------------------------------------------------------------------------
 :: stop ssh daemon, if present
