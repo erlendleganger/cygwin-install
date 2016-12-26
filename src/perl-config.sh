@@ -30,6 +30,9 @@ LWP::Protocol::https
 MediaWiki::API
 MediaWiki::Bot
 MediaWiki::DumpFile
+Git::Repository
+Plack
+Dancer2
 "
 
 #------------------------------------------------------------------------
