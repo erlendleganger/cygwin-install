@@ -33,6 +33,8 @@ MediaWiki::DumpFile
 Git::Repository
 Plack
 Dancer2
+Twiggy
+Server::Starter
 "
 
 #------------------------------------------------------------------------
