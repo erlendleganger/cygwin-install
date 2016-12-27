@@ -55,7 +55,8 @@ curl -L http://cpanmin.us|perl - App::cpanminus;
 #install required perl modules
 for m in $modules; do
    printf "\n$line\n$me: install perl module $m:\n"
-   cpanm -fv $m
+   #cpanm -fv $m
+   cpanm $m
    if [ $? != 0 ]; then
       echo error: installation of module $m failed
       exit 1
