@@ -70,6 +70,7 @@ set pkgs=%pkgs%,openssl-devel
 set pkgs=%pkgs%,openssl-perl
 set pkgs=%pkgs%,sqllite
 set pkgs=%pkgs%,xmlstarlet
+set pkgs=%pkgs%,terminator
 
 ::------------------------------------------------------------------------
 :: stop ssh daemon, if present
